@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>top things that Elle likes</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd1dc, #e6ccff);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 40px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+button {
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    transform: translateY(-5px);
+    background: #fff0f5;
+}
+
+#messageBox {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #333;
+    min-height: 50px;
+    padding: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.valentine-options {
+    margin-top: 20px;
+}
+
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+#yesBtn:hover {
+    background: #ff1e4d;
+}
+
+#noBtn {
+    background: #cccccc;
+}
+
+#noBtn:hover {
+    background: #aaaaaa;
+}
+
+.flower {
+    position: fixed;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Top things Elle likes, as far as I know so far</h1>
+<p class="subtitle">and no, I didn't use AI to do this, well I only asked ChatGPT for the emojis ajjajajajaja</p>
+
+<div class="container">
+    <button onclick="showMessage('Because you already shine without it… but I know you love make ups ')">💄 Makeup</button>
+    <button onclick="showMessage('I hope that someday we eat so many pizzas that we end up throwing up AJAJJAJAJAJA')">🍕 Pizza</button>
+    <button onclick="showMessage('I doubt that tulips smell better than you 🌷')">🌷 Tulips</button>
+    <button onclick="showMessage('Sweet… but not sweeter than you 🍫')">🍫 Chocolate Ice Cream</button>
+    <button onclick="showMessage('we will eat it only if you take your medicine first, I dont want you to swell up like a balloon')">🦐 Seafood</button>
+    <button onclick="showMessage('Of course meeeeeeeee')">❤️ One more thing...</button>
+</div>
+
+<div id="messageBox"></div>
+
+<div class="valentine-options">
+    <h2>Will you be my Valentine?</h2>
+    <button id="yesBtn" onclick="yesAnswer()">Yes...</button>
+    <button id="noBtn" onclick="noAnswer()">No 😢</button>
+</div>
+
+<script>
+function showMessage(text) {
+    const box = document.getElementById("messageBox");
+    box.style.opacity = 0;
+    setTimeout(() => {
+        box.innerHTML = text;
+        box.style.opacity = 1;
+    }, 200);
+}
+
+function yesAnswer() {
+    showMessage("Thankkkssssss, i love uuu (dont kill me pliss)");
+
+    for (let i = 0; i < 30; i++) {
+        let flower = document.createElement("div");
+        flower.classList.add("flower");
+        flower.innerHTML = "🌷";
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 5000);
+    }
+}
+
+function noAnswer() {
+    showMessage(" Error detected lil girl jajajjaja... Maybe try clicking 'Yes' instead? xd ");
+}
+</script>
+
+</body>
+</html>
